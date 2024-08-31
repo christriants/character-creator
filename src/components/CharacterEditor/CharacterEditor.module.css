@@ -5,12 +5,20 @@
 }
 
 .maxWidthWrapper {
-  width: 1024px;
+  width: 100%;
+  @media only screen and (min-width: 768px) {
+    width: 1024px;
+  }
 }
 
 .header {
-  padding-bottom: 64px;
-  width: 65%;
+  display: none;
+
+  @media only screen and (min-width: 768px) {
+    display: block;
+    padding-bottom: 64px;
+    width: 65%;
+  }
 }
 
 .title {
@@ -30,12 +38,28 @@
   position: fixed;
   width: 100%;
   height: 500px;
-  top: 10%;
-  left: 60%;
+  top: 0;
+  left: 0;
+  z-index: 1;
+
+  @media only screen and (min-width: 768px) {
+    top: 10%;
+    left: 60%;  }
 }
 
 .controlColumn {
   width: 50%;
+  display: flex;
+  flex-direction: row;
+  gap: 16px;
+  position: absolute;
+  z-index: 2;
+  top: 50%;
+
+  @media only screen and (min-width: 768px) {
+    flex-direction: column;
+    position: relative;
+  }
 }
 
 .divider {
@@ -44,4 +68,8 @@
   width: 100%;
   bottom: 0;
   background-color: hsl(195deg, 20%, 86%);
+
+  @media only screen and (max-width: 768px) {
+    display: none;
+  }
 }

@@ -4,6 +4,10 @@
   background: hsl(0deg, 0%, 5%);
   color: white;
   text-align: center;
+
+  @media only screen and (max-width: 768px) {
+    display: none;
+  }
 }
 
 .link {
